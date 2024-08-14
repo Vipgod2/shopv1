@@ -12,8 +12,8 @@ filters.setup(dp)
 
 WEBAPP_HOST = "0.0.0.0"
 WEBAPP_PORT = int(os.environ.get("PORT", 5000))
-user_message = 'Пользователь'
-admin_message = 'Админ'
+user_message = 'User'
+admin_message = 'Admin'
 
 
 @dp.message_handler(commands='start')
@@ -45,7 +45,7 @@ async def user_mode(message: types.Message):
     if cid in config.ADMINS:
         config.ADMINS.remove(cid)
 
-    await message.answer('Включен пользовательский режим.', reply_markup=ReplyKeyboardRemove())
+    await message.answer('Custom mode enabled.', reply_markup=ReplyKeyboardRemove())
 
 
 @dp.message_handler(text=admin_message)
@@ -55,7 +55,7 @@ async def admin_mode(message: types.Message):
     if cid not in config.ADMINS:
         config.ADMINS.append(cid)
 
-    await message.answer('Включен админский режим.', reply_markup=ReplyKeyboardRemove())
+    await message.answer('Admin mode enabled.', reply_markup=ReplyKeyboardRemove())
 
 
 async def on_startup(dp):
