@@ -23,18 +23,19 @@ async def cmd_start(message: types.Message):
 
     markup.row(user_message, admin_message)
 
-    await message.answer('''Привет! 👋
+    await message.answer('''Hello! 👋
 
-🤖 Я бот-магазин по подаже товаров любой категории.
-    
-🛍️ Чтобы перейти в каталог и выбрать приглянувшиеся товары возпользуйтесь командой /menu.
+🤖 I am a shop bot for selling goods of any category.
 
-💰 Пополнить счет можно через Яндекс.кассу, Сбербанк или Qiwi.
+🛍️ To go to the catalog and choose the items you like, use the /menu command.
 
-❓ Возникли вопросы? Не проблема! Команда /sos поможет связаться с админами, которые постараются как можно быстрее откликнуться.
+💰 You can top up your account through Yandex.Kassa, Sberbank, or Qiwi.
 
-🤝 Заказать похожего бота? Свяжитесь с разработчиком <a href="https://t.me/NikolaySimakov">Nikolay Simakov</a>, он не кусается)))
-    ''', reply_markup=markup)
+❓ Have questions? No problem! The /sos command will help you contact the admins, who will try to respond as quickly as possible.
+
+🤝 Want to order a similar bot? Contact the developer Nikolay Simakov, he doesn’t bite.
+
+If you need any further assistance or have more questions, feel free to ask! 😊''', reply_markup=markup)
 
 
 @dp.message_handler(text=user_message)
