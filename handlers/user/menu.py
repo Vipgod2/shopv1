@@ -18,7 +18,7 @@ async def admin_menu(message: Message):
     markup.add(settings)
     markup.add(questions, orders)
 
-    await message.answer('Меню', reply_markup=markup)
+    await message.answer('Menu', reply_markup=markup)
 
 @dp.message_handler(IsUser(), commands='menu')
 async def user_menu(message: Message):
@@ -27,4 +27,4 @@ async def user_menu(message: Message):
     markup.add(balance, cart)
     markup.add(delivery_status)
 
-    await message.answer('Меню', reply_markup=markup)
+    await message.answer('Menu', reply_markup=markup)
